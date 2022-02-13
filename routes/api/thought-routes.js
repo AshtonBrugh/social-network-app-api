@@ -20,12 +20,15 @@ router
 router
     .route('/:id')
     .get(getThoughtById)
-    .put(addReaction)
     .put(updateThought)
     .delete(deleteThought)
 
 router
-    .route('/:id/:reactionId')
+    .route('/:id/reactions')
+    .post(addReaction)
+
+router
+    .route('/:id/reactions/:reactionId')
     .delete(deleteReaction)
 
 module.exports = router;
